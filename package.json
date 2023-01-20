@@ -1,0 +1,41 @@
+{
+  "name": "@meluiz/epoch",
+  "version": "0.0.0",
+  "description": "Immutable date-time library that represent a single moment in time.",
+  "main": "index.js",
+  "repository": "https://github.com/meluiz/epoch",
+  "author": "meluiz",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "watch": "tsx watch lib/**/*.ts",
+    "build": "tsup --config tsup.config.js",
+    "commit": "git-cz",
+    "prepare": "husky install",
+    "test": "vitest --config ./vitest.config.ts",
+    "test:ui": "yarn test --ui",
+    "test:coverage": "yarn vitest --coverage",
+    "postversion": "npm publish",
+    "format": "prettier --write .",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^0.27.2",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.3",
+    "standard-version": "^9.5.0",
+    "tsup": "^6.5.0",
+    "tsx": "^3.12.2",
+    "typescript": "^4.9.4",
+    "vitest": "^0.27.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
